@@ -74,33 +74,37 @@ export default function CreateListingPage() {
                 required
               />
               
-              <Input
-                label="Category"
-                as="select"
-                value={formData.category}
-                onChange={(e) => setFormData(prev => ({ ...prev, category: e.target.value }))}
-                required
-              >
-                <option value="">Select a category</option>
-                {mockCategories.map(category => (
-                  <option key={category.id} value={category.name}>{category.name}</option>
-                ))}
-              </Input>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Category</label>
+                <select
+                  value={formData.category}
+                  onChange={(e) => setFormData(prev => ({ ...prev, category: e.target.value }))}
+                  className="input-3d w-full"
+                  required
+                >
+                  <option value="">Select a category</option>
+                  {mockCategories.map(category => (
+                    <option key={category.id} value={category.name}>{category.name}</option>
+                  ))}
+                </select>
+              </div>
 
-              <Input
-                label="Condition"
-                as="select"
-                value={formData.condition}
-                onChange={(e) => setFormData(prev => ({ ...prev, condition: e.target.value }))}
-                required
-              >
-                <option value="">Select condition</option>
-                <option value="new">New</option>
-                <option value="like-new">Like New</option>
-                <option value="good">Good</option>
-                <option value="fair">Fair</option>
-                <option value="poor">Poor</option>
-              </Input>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Condition</label>
+                <select
+                  value={formData.condition}
+                  onChange={(e) => setFormData(prev => ({ ...prev, condition: e.target.value }))}
+                  className="input-3d w-full"
+                  required
+                >
+                  <option value="">Select condition</option>
+                  <option value="new">New</option>
+                  <option value="like-new">Like New</option>
+                  <option value="good">Good</option>
+                  <option value="fair">Fair</option>
+                  <option value="poor">Poor</option>
+                </select>
+              </div>
 
               <Input
                 label="Location"
